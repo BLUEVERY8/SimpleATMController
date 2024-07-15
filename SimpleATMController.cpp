@@ -12,13 +12,14 @@ SimpleATMController::~SimpleATMController() {
 }
 
 bool SimpleATMController::insertCard(int pin_number) {
+	// pin number 확인되면 거래가 가능하도록 권한을 부여
 	this->permission_ = this->bank_api_.checkPinNumber(pin_number);
 	
 	return this->permission_;
 }
 
 void SimpleATMController::checkBalance() {
-	cout << "잔액 :" << this->bank_api_.checkBalance(this->permission_) << "달러" << endl;
+	cout << "Balance :" << this->bank_api_.checkBalance(this->permission_) << "dollar" << endl;
 }
 
 bool SimpleATMController::deposit(int money) {
@@ -29,7 +30,8 @@ bool SimpleATMController::withdraw(int money) {
 	return this->bank_api_.withdraw(this->permission_, money);
 }
 
+// 거래 종료
 void SimpleATMController::done() {
 	this->permission_ = false;
-	cout << "거래가 완료되었습니다" << endl;
+	cout << "Complete" << endl;
 }

@@ -24,6 +24,7 @@ int Account::get_pin_number() {
 
 
 bool Account::update_balance(int difference) {
+	// 잔액 부족 시 인출 불가
 	if (this->balance_ + difference < 0)
 		return false;
 	this->balance_ += difference;

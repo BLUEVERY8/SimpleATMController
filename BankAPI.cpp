@@ -12,7 +12,7 @@ BankAPI::~BankAPI() {
 }
 
 bool BankAPI::checkPinNumber(int pin_number) {
-
+	// pin number 확인되면 true
 	if (accounts_[0].get_pin_number() == pin_number)
 		return true;
 

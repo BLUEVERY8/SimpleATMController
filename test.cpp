@@ -5,7 +5,7 @@ using namespace std;
 
 int main() {
 
-	// Test 1
+	// Test 1 ordinary case
 	SimpleATMController atm1 = SimpleATMController();
 
 	cout << "Insert Card" << endl;
@@ -41,7 +41,7 @@ int main() {
 	cout << endl;
 	cout << "-------------------------------------------------------------" << endl;
 
-	// Test 2 *잔액이 부족할 경우
+	// Test 2 not enough balance
 	SimpleATMController atm2 = SimpleATMController();
 
 	cout << "Insert Card" << endl;
@@ -75,7 +75,7 @@ int main() {
 	cout << endl;
 	cout << "-------------------------------------------------------------" << endl;
 
-	// Test 3 *잘못된 pin number 입력
+	// Test 3 wrong pin number
 	SimpleATMController atm3 = SimpleATMController();
 	cout << "Insert Card" << endl;
 
